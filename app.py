@@ -146,24 +146,24 @@ if st.session_state.call_in_progress and st.session_state.call_sid:
                 st.session_state.call_sid = None
                 st.success("Call has ended.")
 
-# Recent Calls section
-st.markdown("### Recent Calls")
-if st.button("Refresh Call History"):
-    pass  # The table will refresh on rerun
+# # Recent Calls section
+# st.markdown("### Recent Calls")
+# if st.button("Refresh Call History"):
+#     pass  # The table will refresh on rerun
 
-recent_calls = get_recent_calls(limit=10)
-if recent_calls:
-    calls_data = []
-    for call in recent_calls:
-        calls_data.append({
-            "Receiver": call.get("to", "-"),
-            "Start Time (IST)": convert_to_ist(call.get("start_time", "-")),
-            "End Time (IST)": convert_to_ist(call.get("end_time", "-")),
-            "Duration (s)": call.get("duration_in_seconds", "0"),
-            "Status": call.get("status", "-"),
-            "Call ID": call.get("sid", "-")
-        })
-    df = pd.DataFrame(calls_data)
-    st.dataframe(df, height=400)
-else:
-    st.info("No recent calls found or unable to retrieve call history.")
+# recent_calls = get_recent_calls(limit=10)
+# if recent_calls:
+#     calls_data = []
+#     for call in recent_calls:
+#         calls_data.append({
+#             "Receiver": call.get("to", "-"),
+#             "Start Time (IST)": convert_to_ist(call.get("start_time", "-")),
+#             "End Time (IST)": convert_to_ist(call.get("end_time", "-")),
+#             "Duration (s)": call.get("duration_in_seconds", "0"),
+#             "Status": call.get("status", "-"),
+#             "Call ID": call.get("sid", "-")
+#         })
+#     df = pd.DataFrame(calls_data)
+#     st.dataframe(df, height=400)
+# else:
+#     st.info("No recent calls found or unable to retrieve call history.")
