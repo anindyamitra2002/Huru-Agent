@@ -103,7 +103,7 @@ if 'call_status' not in st.session_state:
 # Input field in one row (left-aligned)
 to_number = st.text_input(
     "Receiver Number (including country code)",
-    placeholder="Enter number with country code (e.g., +91)"
+    placeholder="+919876543210"
 )
 
 # Button in next row (left-aligned) - always enabled
